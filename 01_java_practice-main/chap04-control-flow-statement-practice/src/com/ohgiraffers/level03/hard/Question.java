@@ -1,5 +1,7 @@
 package com.ohgiraffers.level03.hard;
 
+import java.util.Scanner;
+
 public class Question {
 
     public static void main(String[] args) {
@@ -14,6 +16,36 @@ public class Question {
          *
          * 계산 예시) BMI = 67 / (1.7 * 1.7)
          * */
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("키 입력");
+        double height = sc.nextDouble();
+        System.out.println("몸무게 입력");
+        double weight = sc.nextDouble();
+
+        double bmi = weight / (height/100 * height/100);
+
+        bmi = (int)(bmi * 100)/100;
+
+        if(bmi < 20){
+            System.out.println("키" + height + "몸무게" + weight);
+            System.out.println("bmi=" + bmi + " 저체중");
+
+        } else if (bmi < 24) {
+            System.out.println("키" + height + "몸무게" + weight);
+            System.out.println("bmi=" + bmi + " 정상");
+
+        } else if (bmi < 29) {
+            System.out.println("키" + height + "몸무게" + weight);
+            System.out.println("bmi=" + bmi + " 과체중");
+
+        } else {
+            System.out.println("키" + height + "몸무게" + weight);
+            System.out.println("bmi=" + bmi + " 비만");
+
+        }
+
+
     }
 
 }
